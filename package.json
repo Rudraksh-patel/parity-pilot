@@ -1,0 +1,57 @@
+{
+    "name": "parity-pilot",
+    "version": "1.0.0",
+    "description": "Unified environment parity checker - catches env, version, and lockfile drift before it breaks production",
+    "main": "dist/index.js",
+    "bin": {
+        "parity-pilot": "./bin/parity-pilot.js"
+    },
+    "type": "module",
+    "scripts": {
+        "build": "tsc",
+        "dev": "tsx src/index.ts",
+        "start": "node dist/index.js",
+        "test": "jest --forceExit",
+        "test:watch": "jest --watch",
+        "test:coverage": "jest --coverage",
+        "lint": "tsc --noEmit",
+        "zip": "node scripts/create-zip.js",
+        "prepublishOnly": "npm run build"
+    },
+    "keywords": [
+        "environment",
+        "parity",
+        "env",
+        "diff",
+        "deployment",
+        "devops",
+        "cli",
+        "node",
+        "package-lock",
+        "version-check"
+    ],
+    "author": "Rudy",
+    "license": "MIT",
+    "engines": {
+        "node": ">=18.0.0"
+    },
+    "dependencies": {
+        "chalk": "^5.3.0",
+        "cli-table3": "^0.6.4",
+        "commander": "^12.1.0",
+        "semver": "^7.8.5",
+        "yaml": "^2.9.0"
+    },
+    "devDependencies": {
+        "@types/archiver": "^6.0.2",
+        "@types/jest": "^29.5.12",
+        "@types/node": "^20.11.0",
+        "@types/semver": "^7.7.1",
+        "archiver": "^7.0.0",
+        "jest": "^29.7.0",
+        "ts-jest": "^29.1.2",
+        "ts-node": "^10.9.2",
+        "tsx": "^4.7.0",
+        "typescript": "^5.3.3"
+    }
+}

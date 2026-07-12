@@ -1,0 +1,18 @@
+{
+  "env": {
+    "base": "tests/fixtures/env/.env.example",
+    "target": "tests/fixtures/env/.env.production",
+    "showValues": true,
+    "ignoreKeys": ["LOG_LEVEL"]
+  },
+  "lockfile": {
+    "base": "tests/fixtures/lockfiles/package-lock-v2-base.json",
+    "target": "tests/fixtures/lockfiles/package-lock-v2-changed.json",
+    "ignoreDev": true,
+    "ignorePackages": ["@types/node"]
+  },
+  "version": {
+    "remoteNode": "20.10.0",
+    "checkNvmrc": false
+  }
+}

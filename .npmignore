@@ -1,0 +1,23 @@
+# Ignore test files and fixtures
+tests/
+jest.config.cjs
+
+# Ignore dev scripts
+scripts/
+
+# Ignore CI config
+.github/
+
+# Ignore source TypeScript (dist/ has compiled JS)
+src/
+
+# Ignore config files
+tsconfig.json
+.gitignore
+
+# Ignore editor/OS files
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db

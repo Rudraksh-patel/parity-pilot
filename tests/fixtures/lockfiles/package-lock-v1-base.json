@@ -1,0 +1,25 @@
+{
+    "name": "test-project",
+    "version": "1.0.0",
+    "lockfileVersion": 1,
+    "dependencies": {
+        "lodash": {
+            "version": "4.17.20",
+            "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.20.tgz",
+            "integrity": "sha512-..."
+        },
+        "express": {
+            "version": "4.18.0",
+            "resolved": "https://registry.npmjs.org/express/-/express-4.18.0.tgz",
+            "integrity": "sha512-..."
+        }
+    },
+    "devDependencies": {
+        "jest": {
+            "version": "29.6.0",
+            "resolved": "https://registry.npmjs.org/jest/-/jest-29.6.0.tgz",
+            "integrity": "sha512-...",
+            "dev": true
+        }
+    }
+}
