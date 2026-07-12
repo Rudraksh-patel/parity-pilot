@@ -19,8 +19,8 @@ const fixturesDir = path.join(__dirname, '../../fixtures/env');
 describe('EnvParser', () => {
     describe('parseEnvFile', () => {
         it('should parse a standard .env file', () => {
-            const content = fs.readFileSync(path.join(fixturesDir, '.env.local'), 'utf-8');
-            const result = parseEnvFile(content, { source: '.env.local' });
+            const content = fs.readFileSync(path.join(fixturesDir, '.env.development'), 'utf-8');
+            const result = parseEnvFile(content, { source: '.env.development' });
 
             expect(result.vars.size).toBe(11);
             expect(result.errors.length).toBe(0);

@@ -21,7 +21,7 @@ describe('EnvChecker', () => {
 
     it('should find extra keys', () => {
         const result = checkEnvParity({
-            base: path.join(fixturesDir, '.env.local'),
+            base: path.join(fixturesDir, '.env.development'),
             target: path.join(fixturesDir, '.env.staging'),
         });
 
@@ -31,7 +31,7 @@ describe('EnvChecker', () => {
 
     it('should find changed values', () => {
         const result = checkEnvParity({
-            base: path.join(fixturesDir, '.env.local'),
+            base: path.join(fixturesDir, '.env.development'),
             target: path.join(fixturesDir, '.env.production'),
         });
 
@@ -42,7 +42,7 @@ describe('EnvChecker', () => {
 
     it('should count matches', () => {
         const result = checkEnvParity({
-            base: path.join(fixturesDir, '.env.local'),
+            base: path.join(fixturesDir, '.env.development'),
             target: path.join(fixturesDir, '.env.staging'),
         });
 
@@ -52,7 +52,7 @@ describe('EnvChecker', () => {
     it('should return error for non-existent base file', () => {
         const result = checkEnvParity({
             base: '/non/existent/.env',
-            target: path.join(fixturesDir, '.env.local'),
+            target: path.join(fixturesDir, '.env.development'),
         });
 
         expect(result.diffs.some(d => d.key === '_error')).toBe(true);
@@ -61,7 +61,7 @@ describe('EnvChecker', () => {
 
     it('should return error for non-existent target file', () => {
         const result = checkEnvParity({
-            base: path.join(fixturesDir, '.env.local'),
+            base: path.join(fixturesDir, '.env.development'),
             target: '/non/existent/.env',
         });
 
@@ -70,7 +70,7 @@ describe('EnvChecker', () => {
 
     it('should respect ignore keys', () => {
         const result = checkEnvParity({
-            base: path.join(fixturesDir, '.env.local'),
+            base: path.join(fixturesDir, '.env.development'),
             target: path.join(fixturesDir, '.env.production'),
             ignoreKeys: ['DATABASE_URL', 'PORT', 'API_KEY'],
         });
@@ -92,7 +92,7 @@ describe('EnvChecker', () => {
 
     it('should assign lower severity for non-critical extra keys', () => {
         const result = checkEnvParity({
-            base: path.join(fixturesDir, '.env.local'),
+            base: path.join(fixturesDir, '.env.development'),
             target: path.join(fixturesDir, '.env.staging'),
         });
 

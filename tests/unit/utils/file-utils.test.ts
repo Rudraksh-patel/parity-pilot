@@ -11,7 +11,7 @@ const fixturesDir = path.join(__dirname, '../../fixtures/env');
 describe('FileUtils', () => {
     describe('safeReadFile', () => {
         it('should read an existing file', () => {
-            const result = safeReadFile(path.join(fixturesDir, '.env.local'));
+            const result = safeReadFile(path.join(fixturesDir, '.env.development'));
             expect(result.success).toBe(true);
             expect(result.content).toContain('DATABASE_URL');
         });
@@ -39,7 +39,7 @@ describe('FileUtils', () => {
 
     describe('fileExists', () => {
         it('should return true for existing file', () => {
-            expect(fileExists(path.join(fixturesDir, '.env.local'))).toBe(true);
+            expect(fileExists(path.join(fixturesDir, '.env.development'))).toBe(true);
         });
 
         it('should return false for non-existent file', () => {
@@ -51,7 +51,7 @@ describe('FileUtils', () => {
         it('should find .env files in directory', () => {
             const files = findEnvFiles(fixturesDir);
             expect(files.length).toBeGreaterThan(0);
-            expect(files.some(f => f.endsWith('.env.local'))).toBe(true);
+            expect(files.some(f => f.endsWith('.env.development'))).toBe(true);
         });
 
         it('should return empty array for directory with no env files', () => {

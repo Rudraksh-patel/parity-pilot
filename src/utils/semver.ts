@@ -27,11 +27,11 @@ export function parseSemver(version: string): SemVer | null {
     }
 
     // Try standard parsing (retains prerelease tags)
-    let parsed = semver.parse(trimmed);
+    let parsed = semver.parse(clean);
 
     // Try coercion (for loose version inputs like "20" or "20.11")
     if (!parsed) {
-        parsed = semver.coerce(trimmed);
+        parsed = semver.coerce(clean);
     }
 
     if (!parsed) {
@@ -44,7 +44,7 @@ export function parseSemver(version: string): SemVer | null {
         patch: parsed.patch,
         prerelease: parsed.prerelease.length > 0 ? parsed.prerelease.join('.') : undefined,
         build: parsed.build.length > 0 ? parsed.build.join('.') : undefined,
-        raw: trimmed,
+        raw: clean,
     };
 }
 
